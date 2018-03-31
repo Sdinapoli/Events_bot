@@ -1,8 +1,6 @@
 var Discord = require('discord.io');
 var logger = require('winston');
 //var auth = require('./auth.json');
-var fs = require('fs');
-var readline = require('readline');
 var nthline = require('nthline');
 var rand = 93 /*This needs to be number of lines in the txt file PLUS ONE*/
 
@@ -46,7 +44,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
 			break;*/
 			case 'event':
 				var line = Math.floor(Math.random() * rand);
-				var inputFile = "\events.txt";
+				var inputFile = "events.txt";
 				nthline(line, inputFile).then(out => bot.sendMessage({to: Anchorheed, message: out}));
             break;
             
